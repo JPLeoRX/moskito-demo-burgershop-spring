@@ -2,6 +2,7 @@ package org.moskito.demo.burgershop.burgershopstripped.service;
 
 import net.anotheria.moskito.aop.annotation.Monitor;
 import net.anotheria.moskito.core.dynamic.OnDemandStatsProducer;
+import net.anotheria.moskito.core.dynamic.OnDemandStatsProducerException;
 import net.anotheria.moskito.core.registry.ProducerRegistryFactory;
 import org.moskito.demo.burgershop.burgershopstripped.counters.IngredientCounter;
 import org.moskito.demo.burgershop.burgershopstripped.counters.OrderCounter;
@@ -83,6 +84,17 @@ public class ShopServiceImpl implements ShopService {
 
 		// Order counter
         orderCounter.orderPlaced();
+
+        int priceInCents = order.getTotalPrice();
+        salesProducer.getDefaultStats().addSale(priceInCents);
+        for (String item : items) {
+            try {
+                salesProducer.getStats(item).addSale(priceInCents);
+            } catch (OnDemandStatsProducerException e) {
+                log.warn("Cannot mark items");
+            }
+        }
+
 
 		return order;
 	}

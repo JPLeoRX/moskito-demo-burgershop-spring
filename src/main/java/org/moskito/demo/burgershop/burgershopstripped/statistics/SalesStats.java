@@ -1,11 +1,17 @@
 package org.moskito.demo.burgershop.burgershopstripped.statistics;
 
+import net.anotheria.moskito.core.decorators.DecoratorRegistryFactory;
 import net.anotheria.moskito.core.predefined.Constants;
 import net.anotheria.moskito.core.producers.GenericStats;
 import net.anotheria.moskito.core.stats.StatValue;
 import net.anotheria.moskito.core.stats.impl.StatValueFactory;
 
+
 public class SalesStats extends GenericStats {
+    static{
+        DecoratorRegistryFactory.getDecoratorRegistry().addDecorator(SalesStats.class, new SalesStatsDecorator());
+    }
+
     private StatValue number;
     private StatValue volume;
 
@@ -21,11 +27,15 @@ public class SalesStats extends GenericStats {
         volume.increaseByInt(priceCents);
     }
 
-    public StatValue getNumber() {
-        return number;
+    public Long getNumber(String intervalName) {
+        return number.getValueAsLong(intervalName);
     }
 
-    public StatValue getVolume() {
-        return volume;
+    public Long getVolume(String intervalName) {
+        return volume.getValueAsLong(intervalName);
+    }
+
+    public Double getAverageVolume(String interval) {
+        return 1.0* getVolume(interval) / getNumber(interval);
     }
 }
