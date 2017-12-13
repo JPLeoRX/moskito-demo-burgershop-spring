@@ -30,6 +30,29 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.5</version>
+            <scope>test</scope>
+        </dependency>
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -41,37 +64,13 @@
             <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <!-- Moskito Core -->
         <dependency>
             <groupId>net.anotheria</groupId>
             <artifactId>ano-tags</artifactId>
             <version>2.1.1</version>
         </dependency>
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>servlet-api</artifactId>
-            <version>2.5</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.5</version>
-        </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.0.13</version>
-        </dependency>
-
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.5</version>
-            <scope>test</scope>
-        </dependency>
-
-        <!-- Dependency for MoSKito AOP -->
         <dependency>
             <groupId>net.anotheria</groupId>
             <artifactId>moskito-core</artifactId>
@@ -83,14 +82,14 @@
             <version>${moskito.version}</version>
         </dependency>
 
-        <!-- Enabling MoSKito Inspect Remote -->
+        <!-- Moskito Inspect Remote -->
         <dependency>
             <groupId>net.anotheria</groupId>
             <artifactId>moskito-inspect-remote</artifactId>
             <version>${moskito.version}</version>
         </dependency>
 
-        <!-- Enabling MoSKito Inspect Embedded -->
+        <!-- Moskito Inspect Embedded -->
         <dependency>
             <groupId>net.anotheria</groupId>
             <artifactId>moskito-inspect-embedded</artifactId>
@@ -115,109 +114,25 @@
         </dependency>
     </dependencies>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>configureme</artifactId>
-                <version>2.3.4</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>ano-util</artifactId>
-                <version>2.1.8</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>ano-comm</artifactId>
-                <version>2.1.1</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>ano-maf</artifactId>
-                <version>2.1.1</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>ano-tags</artifactId>
-                <version>2.1.1</version>
-            </dependency>
-            <!-- for moskito sql -->
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>ano-db</artifactId>
-                <version>2.1.2</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>ano-plass</artifactId>
-                <version>2.1.2</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>ano-prise</artifactId>
-                <version>2.2.0</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifactId>
-                <version>1.10</version>
-            </dependency>
-            <dependency>
-                <groupId>hsqldb</groupId>
-                <artifactId>hsqldb</artifactId>
-                <version>1.8.0.7</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.aspectj</groupId>
-                <artifactId>aspectjrt</artifactId>
-                <version>1.8.10</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>moskito-core</artifactId>
-                <version>${moskito.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>moskito-sql</artifactId>
-                <version>${moskito.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>moskito-aop</artifactId>
-                <version>${moskito.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>moskito-web</artifactId>
-                <version>${moskito.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>moskito-webui</artifactId>
-                <version>${moskito.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>net.anotheria</groupId>
-                <artifactId>moskito-central</artifactId>
-                <version>${moskito.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.moskito</groupId>
-                <artifactId>moskito-control-agent</artifactId>
-                <version>${moskito.control.agent.version}</version>
-            </dependency>
 
 
-        </dependencies>
-    </dependencyManagement>
+
+
+
+
+
+
+
+
+
+
+
 
     <build>
         <finalName>burgershop-spring-stripped</finalName>
 
         <plugins>
+            <!-- Aspectj maven plugin -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>aspectj-maven-plugin</artifactId>
@@ -258,6 +173,8 @@
                     </execution>
                 </executions>
             </plugin>
+
+            <!-- Maven dependency plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -284,6 +201,7 @@
                 </executions>
             </plugin>
 
+            <!-- Maven war plugin -->
             <plugin>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.1</version>
@@ -295,8 +213,6 @@
                     </webResources>
                 </configuration>
             </plugin>
-            <!-- -->
-
         </plugins>
     </build>
 

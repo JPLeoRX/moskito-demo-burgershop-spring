@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @since 16.11.13 21:51
  */
 @Controller
-@Monitor
+@Monitor(category="controller")
 public class HomeController {
 	@RequestMapping(value = "/")
 	public String home() {

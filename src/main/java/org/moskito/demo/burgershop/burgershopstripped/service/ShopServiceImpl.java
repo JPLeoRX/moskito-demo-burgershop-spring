@@ -1,5 +1,6 @@
 package org.moskito.demo.burgershop.burgershopstripped.service;
 
+import net.anotheria.moskito.aop.annotation.Monitor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import java.util.List;
  * @author lrosenberg
  * @since 16.11.13 22:47
  */
+@Monitor
 public class ShopServiceImpl implements ShopService {
 
 	private LinkedList<ShopableItem> items;

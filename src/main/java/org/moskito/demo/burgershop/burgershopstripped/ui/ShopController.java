@@ -22,7 +22,7 @@ import java.util.List;
  * @since 16.11.13 22:22
  */
 @Controller
-@Monitor
+@Monitor(category="controller")
 public class ShopController {
 
 	private static Logger log = LoggerFactory.getLogger(ShopController.class);

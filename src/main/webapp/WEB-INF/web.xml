@@ -5,6 +5,7 @@
 
   <display-name>Archetype Created Web Application</display-name>
 
+    <!-- Open a port for Moskito -->
     <context-param>
         <param-name>moskitoRmiPort</param-name>
         <param-value>9450</param-value>

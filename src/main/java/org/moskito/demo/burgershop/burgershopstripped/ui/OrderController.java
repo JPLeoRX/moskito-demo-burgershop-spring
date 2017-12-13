@@ -22,7 +22,7 @@ import java.util.LinkedList;
  * @since 17.11.13 15:16
  */
 @Controller
-@Monitor
+@Monitor(category="controller")
 public class OrderController {
 	@Autowired
 	private ShopService service;
