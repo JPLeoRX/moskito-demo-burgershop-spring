@@ -1,5 +1,6 @@
 package org.moskito.demo.burgershop.burgershopstripped.ui;
 
+import net.anotheria.moskito.aop.annotation.Monitor;
 import net.anotheria.util.NumberUtils;
 import org.moskito.demo.burgershop.burgershopstripped.service.Order;
 import org.moskito.demo.burgershop.burgershopstripped.service.ShopService;
@@ -21,6 +22,7 @@ import java.util.LinkedList;
  * @since 17.11.13 15:16
  */
 @Controller
+@Monitor
 public class OrderController {
 	@Autowired
 	private ShopService service;

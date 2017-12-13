@@ -1,5 +1,6 @@
 package org.moskito.demo.burgershop.burgershopstripped.ui;
 
+import net.anotheria.moskito.aop.annotation.Monitor;
 import org.moskito.demo.burgershop.burgershopstripped.service.Category;
 import org.moskito.demo.burgershop.burgershopstripped.service.ShopService;
 import org.moskito.demo.burgershop.burgershopstripped.service.ShopableItem;
@@ -21,6 +22,7 @@ import java.util.List;
  * @since 16.11.13 22:22
  */
 @Controller
+@Monitor
 public class ShopController {
 
 	private static Logger log = LoggerFactory.getLogger(ShopController.class);
