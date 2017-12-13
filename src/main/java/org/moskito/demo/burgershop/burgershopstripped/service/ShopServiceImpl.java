@@ -1,6 +1,7 @@
 package org.moskito.demo.burgershop.burgershopstripped.service;
 
 import net.anotheria.moskito.aop.annotation.Monitor;
+import org.moskito.demo.burgershop.burgershopstripped.counters.IngredientCounter;
 import org.moskito.demo.burgershop.burgershopstripped.counters.OrderCounter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,6 +24,7 @@ public class ShopServiceImpl implements ShopService {
 	private static Logger log = LoggerFactory.getLogger(ShopServiceImpl.class);
 
 	private OrderCounter orderCounter = new OrderCounter();
+	private IngredientCounter ingredientCounter = new IngredientCounter();
 
 	@Autowired
 	private NotificationService notificationService;
@@ -63,14 +65,18 @@ public class ShopServiceImpl implements ShopService {
 		Order order = new Order();
 		for (String item : items){
 			order.addItem(findItemByName(item));
+
+			// Ingredient counter
+			ingredientCounter.ingredientUsed(item);
 		}
 
 		//now prepare notification.
 		sendNotification(customerId, order.toString());
 
+		// Order counter
         orderCounter.orderPlaced();
-		return order;
 
+		return order;
 	}
 
 	private void sendNotification(String customerId, String orderDescription){
