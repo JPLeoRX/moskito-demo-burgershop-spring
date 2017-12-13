@@ -1,0 +1,166 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>moskito-demo-burgershop-spring-stripped</artifactId>
+    <packaging>war</packaging>
+    <version>1.0.0-SNAPSHOT</version>
+    <name>Burgershop Spring Stripped Example Webapp</name>
+
+    <parent>
+        <groupId>net.anotheria</groupId>
+        <artifactId>parent</artifactId>
+        <version>2.8</version>
+    </parent>
+
+    <properties>
+        <spring.version>4.3.6.RELEASE</spring.version>
+
+        <moskito.version>2.8.5-SNAPSHOT</moskito.version>
+        <moskito.control.agent.version>1.2.1-SNAPSHOT</moskito.control.agent.version>
+        <aspectj.version>1.8.7</aspectj.version>
+        <aspectj-maven-plugin.version>1.8</aspectj-maven-plugin.version>
+        <aspectj-maven-plugin.complianceLevel>1.8</aspectj-maven-plugin.complianceLevel>
+        <source-version>1.8</source-version>
+        <target-version>1.8</target-version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.anotheria</groupId>
+            <artifactId>ano-tags</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.0.13</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>configureme</artifactId>
+                <version>2.3.4</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>ano-util</artifactId>
+                <version>2.1.8</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>ano-comm</artifactId>
+                <version>2.1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>ano-maf</artifactId>
+                <version>2.1.1</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>ano-tags</artifactId>
+                <version>2.1.1</version>
+            </dependency>
+            <!-- for moskito sql -->
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>ano-db</artifactId>
+                <version>2.1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>ano-plass</artifactId>
+                <version>2.1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>ano-prise</artifactId>
+                <version>2.2.0</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>1.10</version>
+            </dependency>
+            <dependency>
+                <groupId>hsqldb</groupId>
+                <artifactId>hsqldb</artifactId>
+                <version>1.8.0.7</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>1.8.10</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>moskito-core</artifactId>
+                <version>${moskito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>moskito-sql</artifactId>
+                <version>${moskito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>moskito-aop</artifactId>
+                <version>${moskito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>moskito-web</artifactId>
+                <version>${moskito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>moskito-webui</artifactId>
+                <version>${moskito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.anotheria</groupId>
+                <artifactId>moskito-central</artifactId>
+                <version>${moskito.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.moskito</groupId>
+                <artifactId>moskito-control-agent</artifactId>
+                <version>${moskito.control.agent.version}</version>
+            </dependency>
+
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <finalName>burgershop-spring-stripped</finalName>
+    </build>
+
+
+</project>
