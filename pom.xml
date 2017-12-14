@@ -22,7 +22,7 @@
         <!-- Moskito version -->
         <moskito.version>2.8.5-SNAPSHOT</moskito.version>
         <moskito.control.agent.version>1.2.1-SNAPSHOT</moskito.control.agent.version>
-        <moskito-central.version>1.1.1</moskito-central.version>
+        <moskito-central.version>1.1.4</moskito-central.version>
 
         <!-- AspectJ version -->
         <aspectj.version>1.8.7</aspectj.version>
@@ -93,17 +93,19 @@
         <!-- Moskito Central Embedded -->
         <dependency>
             <groupId>org.moskito</groupId>
-            <artifactId>moskito-central-core</artifactId>
-            <version>${moskito-central.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.moskito</groupId>
             <artifactId>moskito-central-embedded-connector</artifactId>
             <version>${moskito-central.version}</version>
         </dependency>
         <dependency>
             <groupId>org.moskito</groupId>
             <artifactId>moskito-central-storages</artifactId>
+            <version>${moskito-central.version}</version>
+        </dependency>
+
+        <!-- Moskito Central Remote -->
+        <dependency>
+            <groupId>org.moskito</groupId>
+            <artifactId>moskito-central-rest-connector</artifactId>
             <version>${moskito-central.version}</version>
         </dependency>
 

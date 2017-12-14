@@ -1,0 +1,5 @@
+{
+  "host": "localhost",
+  "port": 8089,
+  "resourcePath": "/central/addSnapshot"
+}

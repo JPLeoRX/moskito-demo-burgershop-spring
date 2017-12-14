@@ -1,6 +1,5 @@
 {
-  //"pattern": "C:/JavaTemp/moskito-central/csv/{host}/{component}/{producer}/{interval}/{producer}_{stat}.csv",
-  "pattern": "C:/JavaTemp/moskito-central/csv/{host}/{component}/{producer}/{interval}/{producer}_{stat}.csv",
+  "pattern": "C:/JavaTemp/moskito-central-embedded/csv/{host}/{component}/{producer}/{interval}/{producer}_{stat}.csv",
   "@entries": [
     {
       "includedProducers": "SessionCount",
