@@ -120,6 +120,8 @@
             <artifactId>moskito-webui</artifactId>
             <version>${moskito.version}</version>
         </dependency>
+
+        <!-- Moskito Control -->
         <dependency>
             <groupId>org.moskito</groupId>
             <artifactId>moskito-control-agent-http-endpoint</artifactId>
@@ -133,16 +135,6 @@
             <version>${moskito.version}</version>
         </dependency>
     </dependencies>
-
-
-
-
-
-
-
-
-
-
 
 
 
