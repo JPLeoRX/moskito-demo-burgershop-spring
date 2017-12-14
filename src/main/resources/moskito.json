@@ -569,7 +569,14 @@
 				"name": "NoOpPlugin",
 				"configurationName": "none",
 				"className": "net.anotheria.moskito.core.plugins.NoOpPlugin"
-			}
+			},
+
+//          Moskito Central Embedded
+          {
+            "name": "EmbeddedCentralConnector",
+            "configurationName": "none",
+            "className": "org.moskito.central.connectors.embedded.EmbeddedConnector"
+          }
 		]
 	}
 

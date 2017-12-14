@@ -4,7 +4,10 @@ import net.anotheria.moskito.core.decorators.DecoratorRegistryFactory;
 import net.anotheria.moskito.core.predefined.Constants;
 import net.anotheria.moskito.core.producers.GenericStats;
 import net.anotheria.moskito.core.stats.StatValue;
+import net.anotheria.moskito.core.stats.TimeUnit;
 import net.anotheria.moskito.core.stats.impl.StatValueFactory;
+
+import java.util.List;
 
 
 public class SalesStats extends GenericStats {
@@ -12,8 +15,8 @@ public class SalesStats extends GenericStats {
         DecoratorRegistryFactory.getDecoratorRegistry().addDecorator(SalesStats.class, new SalesStatsDecorator());
     }
 
-    private StatValue number;
-    private StatValue volume;
+    private StatValue number;       // Number of sales
+    private StatValue volume;       // Volume of sales
 
     public SalesStats(String aName) {
         super(aName);
@@ -37,5 +40,28 @@ public class SalesStats extends GenericStats {
 
     public Double getAverageVolume(String interval) {
         return 1.0* getVolume(interval) / getNumber(interval);
+    }
+
+    @Override
+    public String toStatsString(String s, TimeUnit timeUnit) {
+        return null;
+    }
+
+    @Override
+    public String getValueByNameAsString(String valueName, String intervalName, TimeUnit timeUnit) {
+        StatDef statDef = StatDef.getValueByName(valueName);
+        switch (statDef) {
+            case NUMBER:
+                return number.getValueAsString(intervalName);
+            case VOLUME:
+                return volume.getValueAsString(intervalName);
+            default:
+                return super.getValueByNameAsString(valueName, intervalName, timeUnit);
+        }
+    }
+
+    @Override
+    public List<String> getAvailableValueNames() {
+        return StatDef.getStatNames();
     }
 }

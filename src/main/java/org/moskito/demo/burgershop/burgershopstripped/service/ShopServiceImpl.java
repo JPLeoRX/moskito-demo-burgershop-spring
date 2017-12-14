@@ -66,6 +66,8 @@ public class ShopServiceImpl implements ShopService {
 
 	@Override
 	public Order placeOrder(String customerId, String... items) {
+		//log.error("Temp directory: " + System.getProperty("java.io.tmpdir"));
+
 		//first find the order
 
 		if (items==null)
